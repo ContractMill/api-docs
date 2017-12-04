@@ -20,7 +20,7 @@ Requires `email` and `password`.
 {"email": "test2@example.com", "password": "topsecret"}
 ```
 
-Returns a [User](#user-data) object and the following headers:
+Returns a [User](#user-data-response) object and the following headers:
 
  - `access-token`
  - `client`
