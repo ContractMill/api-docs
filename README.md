@@ -48,8 +48,7 @@ Examples of external auth providers can be:
 ## Templates
 
 #### GET /api/v1/api/v1/templates
-Returns a list of templates the current user has access to.
-Response with a array of [Template](#contract-template) objects.
+Returns a list of templates (array of [Template](#contract-template) objects) the current user has access to.
 
 Query string parameters:
 
@@ -70,8 +69,7 @@ Returns a [Template](#contract-template) by its ID.
 ## Contracts
 
 #### GET /api/v1/contracts
-Returns a list of contracts.
-Response with a array of [Contract](#contract) objects.
+Returns a list of contracts (array of [Contract](#contract) objects)
 
 Query string parameters:
   - `search[query]` - filter contracts by keyword
@@ -79,7 +77,7 @@ Query string parameters:
 
 
 #### POST /api/v1/templates/:contract_template_id/contracts/new
-Create a new document from a Template (where :contract_template_id is the ID of the template), returns an object with the contract ID.
+Creates a new document from a Template (where :contract_template_id is the ID of the template), returns an object with the contract ID.
 ```json
 { "id": 123 }
 ```
@@ -88,7 +86,7 @@ Create a new document from a Template (where :contract_template_id is the ID of 
 Returns a [Contract](#contract) by its template ID and contract ID.
 
 #### POST /api/v1/contracts/:id
-Update a Contract with user supplied data (metadata or answers to template questions).
+Updates a Contract with user supplied data (metadata or answers to template questions).
 Example payload:
 ```json
 {
@@ -108,7 +106,7 @@ Example payload:
 Downloads an unpublished Contract as DOCX.
 
 #### POST /api/v1/templates/2/public_contract_links/new
-Create a new public link to a Contract questionnaire.
+Creates a new public link to a Contract questionnaire.
 Example payload:
 ```json
 { "public_question_ids": [1, 2, 3], "content_is_visible": true }
