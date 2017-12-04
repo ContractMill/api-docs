@@ -1,6 +1,6 @@
 ![logo](https://contractmill.com/wp-content/uploads/2017/12/cm-logo-portrait-150.png)
 # ContractMill API
-4.12.2017
+4.12.2017 v1.0
 
 API hosts:
 
