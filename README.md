@@ -52,14 +52,32 @@ Returns a list of templates (array of [Template](#contract-template) objects) th
 
 Query string parameters:
 
-  - `search[query]` - filter templates by keyword
-  - `search[category_id]` - filter templates by category ID
+  - `published` - return only published contracts
+  - `query` - filter templates by keyword
+  - `category_id` - filter templates by category ID
 
-#### POST /api/v1/templates/new
-Creates a new [Template](#contract-template), returns an object with the template ID.
+#### POST /api/v1/templates
+Creates a new [Template](#contract-template)
+Example payload:
 ```json
-{ "id": 123 }
+{
+  "contract_template":{
+    "name": "API Test",
+    "description": "API test",
+    "category": null,
+    "role": "admin",
+    "selected_tags": "hello,world",
+    "header_content": "header",
+    "footer_content": "footer",
+    "update_tags_and_category": true
+  }
+}
 ```
+Returns the new [Template](#contract-template).
+
+#### PUT /api/v1/templates/:contract_template_id
+Updates a [Template](#contract-template) by its ID. Returns template object.
+
 
 #### GET /api/v1/templates/:contract_template_id
 Returns a [Template](#contract-template) by its ID.
@@ -72,20 +90,26 @@ Returns a [Template](#contract-template) by its ID.
 Returns a list of contracts (array of [Contract](#contract) objects)
 
 Query string parameters:
-  - `search[query]` - filter contracts by keyword
-  - `search[category_id]` - filter contracts by category ID.
+  - `query` - filter contracts by keyword
+  - `category_id` - filter contracts by category ID.
 
 
-#### POST /api/v1/templates/:contract_template_id/contracts/new
+#### POST /api/v1/templates/:contract_template_id/contracts
 Creates a new document from a Template (where :contract_template_id is the ID of the template), returns an object with the contract ID.
 ```json
-{ "id": 123 }
+{
+  "contract": {
+  "description": "Contract description",
+  "parties": "Company A, Company B"
+  }
+}
 ```
+Returns the new [Contract](#contract).
 
-#### GET /api/v1/templates/:contract_template_id/contracts/:id
-Returns a [Contract](#contract) by its template ID and contract ID.
+#### GET /api/v1/contracts/:id
+Returns a [Contract](#contract) by contract ID.
 
-#### POST /api/v1/contracts/:id
+#### PUT /api/v1/contracts/:id
 Updates a Contract with user supplied data (metadata or answers to template questions).
 Example payload:
 ```json
@@ -102,14 +126,17 @@ Example payload:
 }
 ```
 
-#### GET /api/v1/templates/:contract_template_id/contracts/:id.docx
-Downloads an unpublished Contract as DOCX.
+#### GET /api/v1/contracts/:id.docx
+Downloads a contract as DOCX.
 
-#### POST /api/v1/templates/2/public_contract_links/new
+#### POST /api/v1/templates/:contract_template_id/public_contract_links
 Creates a new public link to a Contract questionnaire.
 Example payload:
 ```json
-{ "public_question_ids": [1, 2, 3], "content_is_visible": true }
+{
+  "public_question_ids": [1, 2, 3],
+  "content_is_visible": true
+}
 ```
 where:
 
@@ -118,19 +145,6 @@ where:
 
 Returns an object with the URL to this public version of a Contract questionnaire:
 `{ "url": "https://contractmill.com/contract/ffaa12b2-8a6d-4ad4-bc85-7b802cfb2173" }`
-
-
-#### GET /api/v1/archive
-Returns a list of completed Contracts.
-
-#### GET /api/v1/archive/drafts
-Returns a list of not-completed Contracts.
-
-#### GET /api/v1/archive/:id
-Returns a Contract by ID.
-
-#### GET /api/v1/archive/:id.docx
-Downloads a published Contract as DOCX.
 
 
 # Example response data
