@@ -1,6 +1,6 @@
 ![logo](https://contractmill.com/wp-content/uploads/2017/12/cm-logo-portrait-150.png)
 # ContractMill API
-4.12.2017 v1.0
+8.12.2017 v1.0
 
 API hosts:
 
@@ -9,6 +9,7 @@ API hosts:
 
 All POST data and response content types are `application/json`.
 
+An example [Postman](https://www.getpostman.com/) collection [is here](contractmill-api.postman_collection.json).
 
 ## Authentication
 
@@ -134,8 +135,10 @@ Creates a new public link to a Contract questionnaire.
 Example payload:
 ```json
 {
-  "public_question_ids": [1, 2, 3],
-  "content_is_visible": true
+  "contract": {
+    "public_question_ids": [2,3,4],
+    "content_is_visible": true
+  }
 }
 ```
 where:

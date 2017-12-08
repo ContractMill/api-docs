@@ -1,0 +1,348 @@
+{
+	"variables": [],
+	"info": {
+		"name": "ContractMill API",
+		"_postman_id": "efa1bf94-f495-8802-ba85-a11fdf7c349e",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:3000/api/v1/auth/sign_in",
+			"request": {
+				"url": "http://localhost:3000/api/v1/auth/sign_in",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"email\": \"test2@example.com\", \"password\": \"topsecret\"}"
+				},
+				"description": "Sign in"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/v1/templates",
+			"request": {
+				"url": "http://localhost:3000/api/v1/templates",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer DdxKNUzyH3WolMaUmcNUSQ",
+						"description": "",
+						"disabled": true
+					},
+					{
+						"key": "access-token",
+						"value": "lut4wmhBQFSlNo8Z2w3k3g",
+						"description": ""
+					},
+					{
+						"key": "uid",
+						"value": "test2@example.com",
+						"description": ""
+					},
+					{
+						"key": "expiry",
+						"value": "1513859008",
+						"description": ""
+					},
+					{
+						"key": "client",
+						"value": "aIuhVciTeChdLfnKRJ3EmQ",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": "Get a list of templates"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/v1/templates/4",
+			"request": {
+				"url": "http://localhost:3000/api/v1/templates",
+				"method": "POST",
+				"header": [
+					{
+						"key": "access-token",
+						"value": "lut4wmhBQFSlNo8Z2w3k3g",
+						"description": ""
+					},
+					{
+						"key": "uid",
+						"value": "test2@example.com",
+						"description": ""
+					},
+					{
+						"key": "expiry",
+						"value": "1513859008",
+						"description": ""
+					},
+					{
+						"key": "client",
+						"value": "aIuhVciTeChdLfnKRJ3EmQ",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"contract_template\":{\n    \"name\": \"CREATE NEW TEMPLAET\",\n    \"description\": \"contract desc\",\n    \"category\": null,\n    \"role\": \"admin\",\n    \"selected_tags\": \"hello,world\",\n    \"header_content\": \"header\",\n    \"footer_content\": \"footer\",\n    \"update_tags_and_category\": true\n  }\n}"
+				},
+				"description": "Update template\n"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/v1/templates",
+			"request": {
+				"url": "http://localhost:3000/api/v1/templates/4",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "access-token",
+						"value": "lut4wmhBQFSlNo8Z2w3k3g",
+						"description": ""
+					},
+					{
+						"key": "uid",
+						"value": "test2@example.com",
+						"description": ""
+					},
+					{
+						"key": "expiry",
+						"value": "1513859008",
+						"description": ""
+					},
+					{
+						"key": "client",
+						"value": "aIuhVciTeChdLfnKRJ3EmQ",
+						"description": ""
+					},
+					{
+						"key": "content-type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"contract_template\":{\n    \"name\": \"API Test UPDATE 1\",\n    \"description\": \"API test\",\n    \"category\": null,\n    \"role\": \"admin\",\n    \"selected_tags\": \"hello,world\",\n    \"header_content\": \"header\",\n    \"footer_content\": \"footer\",\n    \"update_tags_and_category\": true\n  }\n}"
+				},
+				"description": "Create new template\n"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/v1/contracts",
+			"request": {
+				"url": "http://localhost:3000/api/v1/contracts",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer DdxKNUzyH3WolMaUmcNUSQ",
+						"description": "",
+						"disabled": true
+					},
+					{
+						"key": "access-token",
+						"value": "lut4wmhBQFSlNo8Z2w3k3g",
+						"description": ""
+					},
+					{
+						"key": "uid",
+						"value": "test2@example.com",
+						"description": ""
+					},
+					{
+						"key": "expiry",
+						"value": "1513859008",
+						"description": ""
+					},
+					{
+						"key": "client",
+						"value": "aIuhVciTeChdLfnKRJ3EmQ",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": "Get a list of contracts"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/v1/contracts",
+			"request": {
+				"url": "http://localhost:3000/api/v1/templates/4/contracts",
+				"method": "POST",
+				"header": [
+					{
+						"key": "access-token",
+						"value": "lut4wmhBQFSlNo8Z2w3k3g",
+						"description": ""
+					},
+					{
+						"key": "uid",
+						"value": "test2@example.com",
+						"description": ""
+					},
+					{
+						"key": "expiry",
+						"value": "1513859008",
+						"description": ""
+					},
+					{
+						"key": "client",
+						"value": "aIuhVciTeChdLfnKRJ3EmQ",
+						"description": ""
+					},
+					{
+						"key": "content-type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"contract\": {\n\t\"description\": \"Contract description\",\n\t\"parties\": \"Company A, Company B\"\n  }\n}"
+				},
+				"description": "Create a contract"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/v1/templates/2/contract/10",
+			"request": {
+				"url": "http://localhost:3000/api/v1/contracts/17.json",
+				"method": "GET",
+				"header": [
+					{
+						"key": "access-token",
+						"value": "lut4wmhBQFSlNo8Z2w3k3g",
+						"description": ""
+					},
+					{
+						"key": "uid",
+						"value": "test2@example.com",
+						"description": ""
+					},
+					{
+						"key": "expiry",
+						"value": "1513859008",
+						"description": ""
+					},
+					{
+						"key": "client",
+						"value": "aIuhVciTeChdLfnKRJ3EmQ",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": "Get contract by template and contract"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/v1/contracts/15",
+			"request": {
+				"url": "http://localhost:3000/api/v1/contracts/15",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "access-token",
+						"value": "lut4wmhBQFSlNo8Z2w3k3g",
+						"description": ""
+					},
+					{
+						"key": "uid",
+						"value": "test2@example.com",
+						"description": ""
+					},
+					{
+						"key": "expiry",
+						"value": "1513859008",
+						"description": ""
+					},
+					{
+						"key": "client",
+						"value": "aIuhVciTeChdLfnKRJ3EmQ",
+						"description": ""
+					},
+					{
+						"key": "content-type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"contract\": {\n    \"id\": 7,\n    \"user_answers\": [\n      {\n        \"body\": \"Hello world!\",\n        \"question_id\": 1\n      }\n    ]\n  }\n}"
+				},
+				"description": "Updated a contract"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/v1/templates/4/public_contract_links",
+			"request": {
+				"url": "http://localhost:3000/api/v1/templates/4/public_contract_links",
+				"method": "POST",
+				"header": [
+					{
+						"key": "access-token",
+						"value": "lut4wmhBQFSlNo8Z2w3k3g",
+						"description": ""
+					},
+					{
+						"key": "uid",
+						"value": "test2@example.com",
+						"description": ""
+					},
+					{
+						"key": "expiry",
+						"value": "1513859008",
+						"description": ""
+					},
+					{
+						"key": "client",
+						"value": "aIuhVciTeChdLfnKRJ3EmQ",
+						"description": ""
+					},
+					{
+						"key": "content-type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \n  \"contract\": {\n  \t\"public_question_ids\": [2,3,4], \n  \t\"content_is_visible\": true \n  }\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
