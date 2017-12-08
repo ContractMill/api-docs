@@ -4,7 +4,7 @@
 
 API hosts:
 
- - Production environment https://app.contractmill.com
+ - Production environment [https://app.contractmill.com](https://app.contractmill.com)
  - Staging environment access can be provided by request
 
 All POST data and response content types are `application/json`.
@@ -18,7 +18,7 @@ Logs in a user and returns user data and authorization headers.
 Requires `email` and `password`.
 
 ```json
-{"email": "test2@example.com", "password": "topsecret"}
+{ "email": "test2@example.com", "password": "topsecret" }
 ```
 
 Returns a [User](#user-data-response) object and the following headers:
@@ -100,8 +100,8 @@ Creates a new document from a Template (where :contract_template_id is the ID of
 ```json
 {
   "contract": {
-  "description": "Contract description",
-  "parties": "Company A, Company B"
+    "description": "Contract description",
+    "parties": "Company A, Company B"
   }
 }
 ```
